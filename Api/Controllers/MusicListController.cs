@@ -13,10 +13,10 @@ namespace Api.Controllers
     [ApiController]
     public class MusicListController : Controller
     {
-        private readonly IMusicListService _MusicListService;
+        private readonly IMusicListService _musicListService;
         public MusicListController(IMusicListService MusicListService)
         {
-            _MusicListService = MusicListService;
+            _musicListService = MusicListService;
         }
 
         [HttpPost("{id}/saveMusic")]
@@ -25,7 +25,7 @@ namespace Api.Controllers
         //string queryString
         public IActionResult GetMusic()
         {
-            var request = _MusicListService.SaveMusic();
+            var request = _musicListService.SaveMusic();
 
             if (request != null)
             {

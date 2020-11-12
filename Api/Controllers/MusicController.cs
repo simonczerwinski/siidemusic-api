@@ -17,10 +17,10 @@ namespace Api.Controllers
     [ApiController]
     public class MusicController : Controller
     {
-        private readonly IMusicService _MusicService;
+        private readonly IMusicService _musicService;
         public MusicController(IMusicService MusicService)
         {
-            _MusicService = MusicService;
+            _musicService = MusicService;
         }
         [HttpGet("getMusic")]
         [ProducesResponseType(200, Type = typeof(MusicModel))]
@@ -28,7 +28,7 @@ namespace Api.Controllers
         //string queryString
         public IActionResult GetMusic()
         {
-            var request = _MusicService.GetMusic();
+            var request = _musicService.GetMusic();
 
             if (request != null)
             {
