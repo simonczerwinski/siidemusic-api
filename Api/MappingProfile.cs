@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using System;
 
 namespace API
 {
@@ -7,6 +8,7 @@ namespace API
         public MappingProfile()
         {
             //add mapping   
-        }
+              
+    }
     }
 }

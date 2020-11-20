@@ -4,8 +4,11 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using Api.Models;
 using Api.Services;
+using Api.Services.Album;
 using Api.Services.MusicList;
+using Api.Services.Spotify;
 using API;
 using API.Models;
 using AutoMapper;
@@ -108,7 +111,13 @@ namespace Api
             IMapper mapper = mappingConfig.CreateMapper();
             services.AddSingleton(mapper);
 
-            services.AddTransient<IMusicService>(c => new MusicService(Configuration.GetConnectionString("getJsonString"), mapper));
+         
+
+            //services.AddTransient<IMusicService>(c => new MusicService(Configuration.GetConnectionString("getJsonString"), mapper));
+            services.AddTransient<IAlbumService>(c => new AlbumService(Configuration.GetConnectionString("getJsonString"), mapper));
+
+        
+
             services.AddTransient<IMusicListService>(c => new MusicListService(Configuration.GetConnectionString("getDbConnectionString"), mapper));
         }
 

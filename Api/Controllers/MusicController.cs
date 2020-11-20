@@ -12,32 +12,32 @@ using RestSharp;
 
 namespace Api.Controllers
 {
-    [Produces("application/json")]
-    [Route("api/[controller]")]
-    [ApiController]
-    public class MusicController : Controller
-    {
-        private readonly IMusicService _musicService;
-        public MusicController(IMusicService MusicService)
-        {
-            _musicService = MusicService;
-        }
-        [HttpGet("getMusic")]
-        [ProducesResponseType(200, Type = typeof(MusicModel))]
-        [ProducesResponseType(404)]
-        //string queryString
-        public IActionResult GetMusic()
-        {
-            var request = _musicService.GetMusic();
+    //[Produces("application/json")]
+    //[Route("api/[controller]")]
+    //[ApiController]
+    //public class MusicController : Controller
+    //{
+    //    private readonly IMusicService _musicService;
+    //    public MusicController(IMusicService MusicService)
+    //    {
+    //        _musicService = MusicService;
+    //    }
+    //    [HttpGet("getMusic")]
+    //    [ProducesResponseType(200, Type = typeof(MusicModel))]
+    //    [ProducesResponseType(404)]
+    //    //string queryString
+    //    public IActionResult GetMusic()
+    //    {
+    //        var request = _musicService.GetMusic();
 
-            if (request != null)
-            {
-                return Ok(request);
-            }
+    //        if (request != null)
+    //        {
+    //            return Ok(request);
+    //        }
 
-            return NotFound("Something went wrong, could not GET!");
-        }
+    //        return NotFound("Something went wrong, could not GET!");
+    //    }
 
 
-    }
+    //}
 }
